@@ -1,16 +1,24 @@
 # bring-shopping-list
 
-A Claude Code skill for managing [Bring!](https://www.getbring.com/) shopping lists. Add, remove, complete, and view items on your Bring! shopping list through natural language.
+An agent skill for managing [Bring!](https://www.getbring.com/) shopping lists. Add, remove, complete, and view items on your Bring! shopping list through natural language.
+
+Compatible with Claude Code, Cursor, Windsurf, OpenAI Codex CLI, GitHub Copilot, Gemini CLI, and other agents supporting the [SKILL.md standard](https://agentskills.io/specification).
 
 ## Installation
 
-Copy this folder into your Claude Code skills directory:
+Copy this folder into your agent's skills directory:
 
 ```bash
-# personal (available in all projects)
+# Claude Code
 cp -r bring-shopping-list ~/.claude/skills/
 
-# or project-specific
+# Cursor
+cp -r bring-shopping-list ~/.cursor/skills/
+
+# Codex CLI
+cp -r bring-shopping-list ~/.codex/skills/
+
+# or project-specific (example for Claude Code)
 cp -r bring-shopping-list your-project/.claude/skills/
 ```
 
@@ -33,7 +41,7 @@ BRING_PASSWORD=your-password
 
 ## Usage
 
-Once installed, Claude will automatically use this skill when you ask about shopping or groceries:
+Once installed, your agent will automatically use this skill when you ask about shopping or groceries:
 
 - "Add milk and eggs to the shopping list"
 - "What's on my list?"
