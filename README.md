@@ -73,7 +73,3 @@ Items support optional specifications via colon syntax: `"Milk:low fat"`, `"Butt
 ## How It Works
 
 The skill uses the unofficial [bring-api](https://github.com/miaucl/bring-api) Python package to interact with Bring's API. It authenticates with your credentials, finds your default shopping list, and performs operations on it.
-
-## License
-
-MIT
