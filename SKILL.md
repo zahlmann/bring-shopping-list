@@ -34,21 +34,23 @@ Manage a Bring! shopping list — add items, remove items, mark items as complet
 
 All commands use `bring.py` in this skill's directory. Adjust the path based on where you installed the skill.
 
+### With uv (recommended)
+
 ```bash
-# show current list (JSON output for parsing)
 uv run --with bring-api --with python-dotenv python bring.py list --json
-
-# show current list (human-readable)
-uv run --with bring-api --with python-dotenv python bring.py list
-
-# add items (use name:spec for details like "Milk:low fat")
 uv run --with bring-api --with python-dotenv python bring.py add "Milk" "Eggs" "Butter:Irish"
-
-# remove items
 uv run --with bring-api --with python-dotenv python bring.py remove "Milk"
-
-# mark items as completed
 uv run --with bring-api --with python-dotenv python bring.py complete "Eggs"
+```
+
+### With pip
+
+```bash
+pip install -r requirements.txt
+python bring.py list --json
+python bring.py add "Milk" "Eggs" "Butter:Irish"
+python bring.py remove "Milk"
+python bring.py complete "Eggs"
 ```
 
 ## Handling Requests
@@ -68,4 +70,4 @@ uv run --with bring-api --with python-dotenv python bring.py complete "Eggs"
 - Requires `BRING_EMAIL` and `BRING_PASSWORD` environment variables
 - Items can have optional specs via colon syntax: `name:specification`
 - Uses the first (default) shopping list in the account
-- Dependencies (`bring-api`, `python-dotenv`) are handled inline by `uv run --with`
+- Dependencies (`bring-api`, `python-dotenv`) are handled inline by `uv run --with`, or via `pip install -r requirements.txt`

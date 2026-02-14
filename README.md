@@ -16,7 +16,8 @@ cp -r bring-shopping-list your-project/.claude/skills/
 
 ### Requirements
 
-- [uv](https://docs.astral.sh/uv/) (Python package runner)
+- Python 3.10+
+- [uv](https://docs.astral.sh/uv/) (recommended) or pip
 - A Bring! account with email/password login
 
 > **Google login users:** Go to your Bring! account settings and set a separate password for API access.
@@ -40,13 +41,23 @@ Once installed, Claude will automatically use this skill when you ask about shop
 
 ### CLI
 
-You can also use the script directly:
+#### With uv (recommended, no install needed)
 
 ```bash
 uv run --with bring-api --with python-dotenv python bring.py list
 uv run --with bring-api --with python-dotenv python bring.py add "Milk" "Eggs" "Butter:unsalted"
 uv run --with bring-api --with python-dotenv python bring.py remove "Milk"
 uv run --with bring-api --with python-dotenv python bring.py complete "Eggs"
+```
+
+#### With pip
+
+```bash
+pip install -r requirements.txt
+python bring.py list
+python bring.py add "Milk" "Eggs" "Butter:unsalted"
+python bring.py remove "Milk"
+python bring.py complete "Eggs"
 ```
 
 Items support optional specifications via colon syntax: `"Milk:low fat"`, `"Butter:Irish"`.
